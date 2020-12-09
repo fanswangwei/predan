@@ -3,6 +3,7 @@
 		<image class="logo" src="/static/logo.png"></image>
 		<view>
 			<text class="title">{{title}}</text>
+			<button @click="pageJump">跳转</button>
 		</view>
 	</view>
 </template>
@@ -15,10 +16,14 @@
 			}
 		},
 		onLoad() {
+			
 
 		},
 		methods: {
-
+			pageJump(){
+				uni.navigateTo({url: '/pages/address/index'})
+				console.log(uni)
+			}
 		}
 	}
 </script>
