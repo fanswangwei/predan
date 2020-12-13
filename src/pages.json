@@ -1,11 +1,12 @@
 {
-	"pages": [ 
+	"pages": [
 		{
-			"path": "pages/index/index",
+			"path": "pages/home/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "首页"
 			}
-		},{
+		},
+		{
 			"path": "pages/address/index",
 			"style": {
 				"navigationBarTitleText": "uni-app"
@@ -14,8 +15,30 @@
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#666",
+		"selectedColor": "#666",
+		"backgroundColor": "#fff",
+		"borderStyle": "white",
+		"spacing": "5px",
+		"height": "55px",
+		"fontSize": "12px",
+		"list": [
+			{
+				"pagePath": "pages/home/index",
+				"text": "星球首页",
+				"iconPath": "./static/images/icon/icon_planet.png",
+				"selectedIconPath": "./static/images/icon/icon_planet_active.png"
+			},
+			{
+				"pagePath": "pages/address/index",
+				"text": "我的捐赠",
+				"iconPath": "./static/images/icon/icon_donate.png",
+				"selectedIconPath": "./static/images/icon/icon_donate_active.png"
+			}
+		]
 	}
 }
