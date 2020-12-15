@@ -7,9 +7,39 @@
 			}
 		},
 		{
+			"path": "pages/mine/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
 			"path": "pages/address/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "选择地址"
+			}
+		},
+		{
+			"path": "pages/addAddress/index",
+			"style": {
+				"navigationBarTitleText": "新增地址"
+			}
+		},
+		{
+			"path": "pages/clothes/index",
+			"style": {
+				"navigationBarTitleText": "衣物捐赠"
+			}
+		},
+		{
+			"path": "pages/stationery/index",
+			"style": {
+				"navigationBarTitleText": "文具捐赠"
+			}
+		},
+		{
+			"path": "pages/book/index",
+			"style": {
+				"navigationBarTitleText": "书本捐赠"
 			}
 		}
 	],
@@ -17,7 +47,7 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
-	},
+},
 	"tabBar": {
 		"color": "#666",
 		"selectedColor": "#666",
@@ -34,7 +64,7 @@
 				"selectedIconPath": "./static/images/icon/icon_planet_active.png"
 			},
 			{
-				"pagePath": "pages/address/index",
+				"pagePath": "pages/mine/index",
 				"text": "我的捐赠",
 				"iconPath": "./static/images/icon/icon_donate.png",
 				"selectedIconPath": "./static/images/icon/icon_donate_active.png"

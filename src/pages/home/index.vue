@@ -1,6 +1,6 @@
 <template>
 	<view class="page-home">
-		<image class="logo" src="/static/images/home_index.jpg"></image>
+		<view class="home-info"> </view>
 		<view class="planet-recycle">
 			<text class="title">绿星回收</text>
 			<view class="recycle-process">
@@ -17,23 +17,23 @@
 				</view>
 			</view>
 			<view class="recycle-book">
-				<image src="/static/images/recycle-book.png" />
+				<image src="/static/images/recycle-book.png"  @click="pageJump('/pages/book/index')"/>
 			</view>
 		</view>
 		<view class="planet-donate">
 			<text class="title">绿星捐赠</text>
 			<view class="donate-category">
 				<view class="clothes">
-					<image src="/static/images/donate-clothes.png" mode="" />
+					<image src="/static/images/donate-clothes.png" @click="pageJump('/pages/clothes/index')" mode="" />
 				</view>
 				<view class="stationery">
-					<image src="/static/images/donate-stationery.png" mode="" />
+					<image src="/static/images/donate-stationery.png" @click="pageJump('/pages/stationery/index')" mode="" />
 				</view>
 			</view>
 		</view>
 		<view class="planet-status">
 			<text class="title">绿星动态</text>
-			<view class="stray-animals">
+			<view class="stray-animals" @click="pageJump('/pages/address/index')">
 				<image src="/static/images/stray_animals.png" mode="" />
 			</view>
 		</view>
@@ -43,15 +43,12 @@
 <script>
 export default {
 	data() {
-		return {
-			title: 'Hello',
-		}
+		return {}
 	},
 	onLoad() {},
 	methods: {
-		pageJump() {
-			uni.navigateTo({ url: '/pages/address/index' })
-			console.log(uni)
+		pageJump(path) {
+			uni.navigateTo({ url: path })
 		},
 	},
 }
@@ -60,11 +57,16 @@ export default {
 <style lang="scss" scoped>
 .page-home {
 	width: 100%;
-	.logo {
+	.home-info {
 		width: 100%;
+		height: 214px;
+		background: url('/static/images/home_index.jpg') no-repeat;
+		background-size: 100%;
 	}
 	.title {
+		font-family: 'PingFang SC';
 		font-size: 18px;
+		font-weight: 600;
 		color: #666;
 	}
 	.planet-recycle {
@@ -109,6 +111,7 @@ export default {
 			align-items: center;
 			justify-content: space-between;
 			margin: 10px;
+			margin-top: 18px;
 			view {
 				width: 163px;
 				height: 100px;
@@ -127,9 +130,11 @@ export default {
 	}
 	.planet-status {
 		padding: 10px 15px;
+		padding-top: 0;
 		.stray-animals {
 			height: 100px;
 			margin: 10px;
+			margin-top: 18px;
 			image {
 				width: 100%;
 				height: 100%;
