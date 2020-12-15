@@ -1,6 +1,8 @@
 <template>
 	<view class="page-stationery">
-		<view class="stationery-bg"> </view>
+		<view class="stationery-bg">
+			<image src="/static/images/stationery.jpg" mode="" />
+		</view>
 		<view class="stationery-info">
 			<view class="stationery-type">
 				<text class="title">文具捐赠</text>
@@ -12,7 +14,7 @@
 			</view>
 			<view class="address-info">
 				<text class="title">地址信息</text>
-				<view class="address-detail">请选择地址信息</view>
+				<view class="address-detail" @click="pageJump('/pages/address/index')">请选择地址信息</view>
 			</view>
 			<view class="reserve-time">
 				<text class="title">预约时间</text>
@@ -63,6 +65,9 @@ export default {
 		selectedKg(index) {
 			this.kgSelectedIndex = index
 		},
+		pageJump(path) {
+			uni.navigateTo({ url: path })
+		},
 		bindDateChange(e) {
 			console.log(e.target.value)
 			this.date = e.target.value
@@ -92,9 +97,16 @@ export default {
 	.stationery-bg {
 		width: 100%;
 		height: 214px;
-		background: url('/static/images/stationery.jpg') no-repeat;
-		background-size: 100%;
+		// background: url('/static/images/stationery.jpg') no-repeat;
+		// background-size: 100%;
 		position: relative;
+		image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 214px;
+		}
 	}
 	.title {
 		font-family: 'PingFang SC';
@@ -109,6 +121,7 @@ export default {
 	}
 	.stationery-info {
 		padding: 10px 15px;
+		padding-bottom: 70px;
 		> view {
 			margin-bottom: 15px;
 		}

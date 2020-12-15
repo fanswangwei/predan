@@ -93,6 +93,7 @@ export default {
 	}
 	.address-form {
 		padding: 10px 15px;
+		padding-bottom: 70px;
 		.address-form-item {
 			input {
 				height: 40px;

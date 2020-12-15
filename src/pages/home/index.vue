@@ -1,6 +1,8 @@
 <template>
 	<view class="page-home">
-		<view class="home-info"> </view>
+		<view class="home-info">
+			<image src="/static/images/home_index.jpg" mode="" />
+		</view>
 		<view class="planet-recycle">
 			<text class="title">绿星回收</text>
 			<view class="recycle-process">
@@ -17,7 +19,7 @@
 				</view>
 			</view>
 			<view class="recycle-book">
-				<image src="/static/images/recycle-book.png"  @click="pageJump('/pages/book/index')"/>
+				<image src="/static/images/recycle-book.png" @click="pageJump('/pages/book/index')" />
 			</view>
 		</view>
 		<view class="planet-donate">
@@ -27,13 +29,17 @@
 					<image src="/static/images/donate-clothes.png" @click="pageJump('/pages/clothes/index')" mode="" />
 				</view>
 				<view class="stationery">
-					<image src="/static/images/donate-stationery.png" @click="pageJump('/pages/stationery/index')" mode="" />
+					<image
+						src="/static/images/donate-stationery.png"
+						@click="pageJump('/pages/stationery/index')"
+						mode=""
+					/>
 				</view>
 			</view>
 		</view>
 		<view class="planet-status">
 			<text class="title">绿星动态</text>
-			<view class="stray-animals" @click="pageJump('/pages/address/index')">
+			<view class="stray-animals">
 				<image src="/static/images/stray_animals.png" mode="" />
 			</view>
 		</view>
@@ -60,8 +66,16 @@ export default {
 	.home-info {
 		width: 100%;
 		height: 214px;
-		background: url('/static/images/home_index.jpg') no-repeat;
-		background-size: 100%;
+		// background: url('/static/images/home_index.jpg') no-repeat;
+		// background-size: 100%;
+		position: relative;
+		image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 214px;
+		}
 	}
 	.title {
 		font-family: 'PingFang SC';

@@ -1,18 +1,22 @@
 <template>
 	<view class="page-clothes">
-		<view class="clothes-bg"> </view>
+		<view class="clothes-bg">
+			<image src="/static/images/clothes.jpg" mode="" />
+		</view>
 		<view class="clothes-info">
 			<view class="clothes-type">
 				<text class="title">衣物品类</text>
 				<view class="type-box flex">
-					<view :class="['type-item']" v-for="(item, index) in typeList" :key="index">{{ item.label }}</view>
+					<!-- <view :class="['type-item']" v-for="(item, index) in typeList" :key="index">{{ item.label }}</view> -->
+					<image src="/static/images/icon/clothes.png" mode="" />
 				</view>
 			</view>
 			<view class="address-info">
 				<text class="title">地址信息</text>
-				<view class="address-detail">请选择地址信息</view>
+				<view class="address-detail" @click="pageJump('/pages/address/index')">请选择地址信息</view>
 			</view>
 			<view class="reserve-time">
+				
 				<text class="title">预约时间</text>
 				<view class="select-time">
 					<picker mode="date" :value="date" :start="startDate" :end="endDate" @change="bindDateChange">
@@ -46,41 +50,41 @@ export default {
 			typeList: [
 				{
 					label: '衣服',
-					icon: ''
+					icon: '',
 				},
 				{
 					label: '裤子',
-					icon: ''
+					icon: '',
 				},
 				{
 					label: '鞋子',
-					icon: ''
+					icon: '',
 				},
 				{
 					label: '帽子',
-					icon: ''
-				}
+					icon: '',
+				},
 			],
 			kgList: [
 				{
 					value: '5-10',
-					url: '/static/images/icon/5_10kg'
+					url: '/static/images/icon/5_10kg',
 				},
 				{
 					value: '10-20',
-					url: '/static/images/icon/10_20kg'
+					url: '/static/images/icon/10_20kg',
 				},
 				{
 					value: '20-30',
-					url: '/static/images/icon/20_30kg'
+					url: '/static/images/icon/20_30kg',
 				},
 				{
 					value: '30',
-					url: '/static/images/icon/30kg'
-				}
+					url: '/static/images/icon/30kg',
+				},
 			],
 			kgSelectedIndex: 0,
-			date: currentDate
+			date: currentDate,
 		}
 	},
 	onLoad() {},
@@ -95,6 +99,9 @@ export default {
 	methods: {
 		selectedKg(index) {
 			this.kgSelectedIndex = index
+		},
+		pageJump(path) {
+			uni.navigateTo({ url: path })
 		},
 		bindDateChange(e) {
 			console.log(e.target.value)
@@ -125,9 +132,16 @@ export default {
 	.clothes-bg {
 		width: 100%;
 		height: 214px;
-		background: url('/static/images/clothes.jpg') no-repeat;
-		background-size: 100%;
+		// background: url('/static/images/clothes.jpg') no-repeat;
+		// background-size: 100%;
 		position: relative;
+		image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 214px;
+		}
 	}
 	.title {
 		font-family: 'PingFang SC';
@@ -142,6 +156,7 @@ export default {
 	}
 	.clothes-info {
 		padding: 10px 15px;
+		padding-bottom: 70px;
 		> view {
 			margin-bottom: 15px;
 		}
@@ -156,6 +171,11 @@ export default {
 					color: #666;
 					font-size: 14px;
 					font-weight: 300;
+				}
+				image {
+					width: 294px;
+					margin: 0 auto;
+					height: 67px;
 				}
 			}
 		}
@@ -187,7 +207,7 @@ export default {
 			.kg-box {
 				margin-top: 15px;
 				.kg-item {
-					width: 80px;
+					width: calc(25% - 10px);
 					height: 80px;
 					image {
 						width: 100%;

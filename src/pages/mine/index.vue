@@ -1,7 +1,10 @@
 <template>
 	<view class="page-mine">
 		<view class="mine-info">
-			<view class="mine-pic"></view>
+			<image src="/static/images/mine.jpg" mode="" />
+			<view class="mine-pic">
+				<image src="/static/images/icon/img_user_b.png" mode="" />
+			</view>
 			<text class="mine-name">mine-name</text>
 		</view>
 		<view class="mine-record">
@@ -47,9 +50,17 @@ export default {
 	.mine-info {
 		width: 100%;
 		height: 214px;
-		background: url('/static/images/mine.jpg') no-repeat;
-		background-size: 100%;
+		// background: url('/static/images/mine.jpg') no-repeat;
+		// background-size: 100%;
 		position: relative;
+		image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 214px;
+			z-index: 1;
+		}
 		.mine-pic {
 			position: absolute;
 			left: 16px;
@@ -57,7 +68,12 @@ export default {
 			width: 60px;
 			height: 60px;
 			border-radius: 50%;
-			background: #264151;
+			// background: #264151;
+			z-index: 2;
+			image {
+				width: 100%;
+				height: 100%;
+			}
 		}
 		.mine-name {
 			position: absolute;
@@ -68,6 +84,7 @@ export default {
 			font-size: 24px;
 			font-weight: 600;
 			line-height: 60px;
+			z-index: 2;
 		}
 	}
 	.logo {
